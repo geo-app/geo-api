@@ -1,8 +1,6 @@
-Started with #quick-parcel-api-node by quentinmdl
-
 # Description 
 
-Basic festival api with Node + Express + Sequelize
+Basic Geo api on french "commune" with Node + Express + Mongoose
 
 # Methods : 
 
@@ -10,26 +8,19 @@ GET, POST, PUT, DELETE
 
 # Routes: 
 
-- post
-- getAlls
-- getById/:id
-- updateById/:id
-- deleteById/:id
+- commune (post)
+- communes (get)
+- commune/:id (get)
+- commune/:id (put)
+- commune/:id (delete)
 
 
 # COMMANDS
-
 
 Install the node modules 
 
 ```console
     npm install
-```
-
-At first run this command for migrate all entities on database.
-
-```console
-    npm run migrate
 ```
 
 Then run the project with it
@@ -42,12 +33,14 @@ Then run the project with it
 
 (Form urlencoded)
 
-Festival :
+Commune :
 
-name: String,
-startDate: Date,
-endDate: Date,
-numberPlaces: Integer
+    name: { type: String, required: true },
+    code: { type: String, required: true },
+    codeDepartment: { type: String, required: true },
+    codeRegion: { type: String, required: true },
+    codesPostaux: {type: String, required: true},
+    population: { type: Number, required: true },
 
 
   
