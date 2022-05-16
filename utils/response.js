@@ -35,17 +35,17 @@ module.exports = {
 
     returnType: Object.freeze({
         INVALID_FIELDS: "Invalid field(s)",
-        FESTIVAL: Object.freeze({
-            CREATED: "Festival created successfully",
-            UPDATED: "Festival updated succesfully",
-            DESTROY: "Festival removed succesfully",
-            NOT_FOUND: "Festival not found",
-            UNABLE_TO_VERIFY: "Unable to verify festival",
-            EXIST: "Festival already exist",
-            NOEXIST:"Festival not exist",
-            CANT_CREATE : "Cannot create festival",
-            CANT_DELETE: "Cannot delete festival",
-            CANT_UPDATE: "Cannot update festival"
+        ENTITY: Object.freeze({
+            CREATED: "Entity created successfully",
+            UPDATED: "Entity updated succesfully",
+            DESTROY: "Entity removed succesfully",
+            NOT_FOUND: "Entity not found",
+            UNABLE_TO_VERIFY: "Unable to verify Entity",
+            EXIST: "Entity already exist",
+            NOEXIST:"Entity not exist",
+            CANT_CREATE : "Cannot create Entity",
+            CANT_DELETE: "Cannot delete Entity",
+            CANT_UPDATE: "Cannot update Entity"
         }),
     })
 };

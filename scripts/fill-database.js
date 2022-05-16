@@ -1,7 +1,10 @@
 const axios = require("express").default;
 
 
-export default {
+module.exports = {
 
-
+    getCommunes() {
+        
+    }
+    
 }

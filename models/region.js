@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const festivalSchema = new mongoose.Schema({
+const regionSchema = new mongoose.Schema({
     name: { type: String, required: true },
     startDate: { type: Date, required: true },
     endDate: { type: Date, required: true },
@@ -12,5 +12,5 @@ const festivalSchema = new mongoose.Schema({
     } 
 });
 
-const Festival = mongoose.model('festival', festivalSchema);
-module.exports = Festival;
+const Region = mongoose.model('region', regionSchema);
+module.exports = Region;
