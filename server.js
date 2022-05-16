@@ -5,6 +5,13 @@ const server = express();
 server.use(express.json());
 server.use(express.urlencoded({limit: "50mb", extended: true, parameterLimit:500000}));
 
+
+// Initialize & Configure MongoDB
+const mongoose = require('mongoose');
+mongoose.connect('mongodb+srv://Qtn:quentinmendeldu13530trets@main.doxhq.mongodb.net/festival-api?retryWrites=true&w=majority').then(
+  console.log('Database connected')
+).catch(err => console.log(err));
+
 // Import Controllers
 const festivalController = require("./routes/festivalController");
 
