@@ -19,7 +19,7 @@ server.use(function (req, res, next) {
 
 // Initialize & Configure MongoDB
 const mongoose = require('mongoose');
-mongoose.connect('mongodb+srv://admin:admin@main.doxhq.mongodb.net/geolocalisation-api?retryWrites=true&w=majority').then(
+mongoose.connect('mongodb+srv://admin:admin@main.doxhq.mongodb.net/communes-api?retryWrites=true&w=majority').then(
   console.log('Database connected')
 ).catch(err => console.log(err));
 
