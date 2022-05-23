@@ -111,7 +111,7 @@ router.get("/commune/:id", (req, res) => {
 router.get("/search", async (req, res) => {
     // Query
     let term = req.query.term;
-
+    
     await mCommune
         .aggregate([
             {
@@ -128,7 +128,7 @@ router.get("/search", async (req, res) => {
             if (communesFound.length > 0) {
                 return res.status(200).json(
                     response.responseOK("Get all entities succesfully", {
-                        festivals: communesFound,
+                        communes: communesFound,
                     })
                 );
             } else {
