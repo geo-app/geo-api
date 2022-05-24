@@ -141,6 +141,43 @@ router.get("/search", async (req, res) => {
 });
 
 
+// Search by term
+router.get("/communes-by-population", async (req, res) => {
+    // Query
+    let min = req.query.min;
+    let max = req.query.max;
+    let direction = req.query.direction;
+
+    if(direction == "desc"){
+        direction = -1;
+    } else if(direction == "asc") {
+        direction = 1;
+    } else {
+        direction = -1;
+    }
+
+    // console.log(min);    
+    // console.log(max);    
+    // console.log(direction);    
+    await mCommune
+        .find({ "$and": [ { population: { "$gte" : parseInt(min)} }, { population: { "$lte": parseInt(max) }} ]}).sort({ population: direction})
+        .then(function (communesFound) {
+            if (communesFound.length > 0) {
+                return res.status(200).json(
+                    response.responseOK("Get all entities succesfully", {
+                        communes: communesFound,
+                    })
+                );
+            } else {
+                res.status(200).json(response.responseERROR(response.returnType.entity.NOT_FOUND));
+            }
+        })
+        .catch(function (err) {
+            res.status(500).json(response.responseERROR(response.returnType.INVALID_FIELDS));
+        });
+});
+
+
 // Update entity by id
 router.put("/commune/:id", (req, res) => {
     // Params
